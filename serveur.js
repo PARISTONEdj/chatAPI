@@ -113,7 +113,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
   // Obtenez le nom du fichier téléchargé
   const filename = req.file.filename;
   // Générez l'URL complète de l'image
-  const imageUrl = `http://localhost:${port}/uploads/${filename}`;
+  const imageUrl = `https://chatapi-g6pn.onrender.com/uploads/${filename}`;
   res.json({ imageUrl });
 });
 
