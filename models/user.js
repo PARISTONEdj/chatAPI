@@ -12,6 +12,7 @@ const userSchema = mongoose.Schema({
   isAdmin : {type : Boolean, required: true },
   telephone : {type : Number, required : false},
   datecreation : {type : String, require : false},
+  active : {type: Boolean, default:false}
 });
 
 userSchema.plugin(uniqueValidator);

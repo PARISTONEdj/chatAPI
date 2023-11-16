@@ -26,6 +26,10 @@ exports.router = (function(){
 
     userRouter.route("/deconnexion/").post(auth, userController.logout);
 
+    userRouter.route("/loginphone/").post(userController.registerPhone);
+
+    userRouter.route("/verifyphone/").post(userController.verifyOTP);
+
 
     return userRouter;
 })();
