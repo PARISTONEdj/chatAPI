@@ -30,6 +30,8 @@ exports.router = (function(){
 
     userRouter.route("/verifyphone/").post(userController.verifyOTP);
 
+    userRouter.route("/selectone/:id").get(auth, userController.Selectuser);
+
 
     return userRouter;
 })();

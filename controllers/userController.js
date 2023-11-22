@@ -385,5 +385,25 @@ module.exports = {
           console.error('Erreur lors de la vérification de l\'OTP :', error);
           res.status(500).json({ error: 'Erreur lors de la vérification de l\'OTP' });
         });
-    }
+    },
+
+    Selectuser: function(req, res, next) {
+      const userId = req.params.id;
+      
+      User
+        .findById(userId) // Utilisez findById pour rechercher un utilisateur par ID
+        .then(user => {
+          if (!user) {
+            // L'utilisateur n'a pas été trouvé
+            return res.status(404).json({ message: 'Utilisateur non trouvé' });
+          }
+          // L'utilisateur a été trouvé
+          res.status(200).json(user);
+        })
+        .catch(error => {
+          // Gérez les erreurs de manière appropriée
+          console.error('Erreur lors de la recherche de l\'utilisateur :', error);
+          res.status(500).json({ error: 'Erreur serveur' });
+        });
+    },
 }
