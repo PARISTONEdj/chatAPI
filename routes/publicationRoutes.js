@@ -23,6 +23,8 @@ exports.router = (function(){
 
     userRouter.route("/mespub/").get(auth, publicationController.Mespub);
 
+    userRouter.route("/userpub/:id").get(auth, publicationController.userpub);
+
     userRouter.route("/delete/:id").delete(auth, publicationController.supprimer);
 
     userRouter.route("/update/:id").put(auth, publicationController.modifier);

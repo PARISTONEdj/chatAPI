@@ -143,5 +143,13 @@ module.exports = {
       .find({ userId: userId }) // Filtrer les publications par ID de l'utilisateur
       .then(publications => res.status(200).json(publications))
       .catch(error => res.status(400).json({ error }));
+    },
+
+    userpub : function(req, res, next){
+      const userId = req.params.id;
+      Publication
+      .find({ userId: userId }) // Filtrer les publications par ID de l'utilisateur
+      .then(publications => res.status(200).json(publications))
+      .catch(error => res.status(400).json({ error }));
     }
 }
